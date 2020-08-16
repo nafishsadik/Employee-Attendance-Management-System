@@ -1,0 +1,27 @@
+def search():
+    try:
+        con=mysql.connect(user='nabil' , password='1234')
+        cur=cur.cursor()
+        sql="select * from employee where name='%s'"%name.get()
+        cur.execute(sql)
+        result=cur.execute()
+        name.set(result[1])
+        con.close()
+    except:
+        messagebox.showinfo('Data not found')
+        clear()
+
+
+ def clear():
+            name.set(' ')
+
+
+
+
+
+
+
+
+
+
+
