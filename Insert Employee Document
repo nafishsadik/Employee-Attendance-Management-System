@@ -1,0 +1,14 @@
+def insert():
+    try:
+        con = mysql.connect(user='nabil', password='1234')
+        cur = cur.cursor()
+        sql = "insert into employee values ('%s', '%s', '%s', '%s', '%s')" \
+              % (Firstname.get(), Lastname.get(), username.get(), email.get(), password.get())
+        cur.execute(sql)
+        con.commit()
+        con.close()
+        messagebox.showinfo('Success')
+    except:
+        messagebox.showinfo('Error')
+    finally:
+        clear()
